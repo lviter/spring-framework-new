@@ -16,6 +16,7 @@
 
 package org.springframework.context.support;
 
+import jdk.nashorn.internal.runtime.JSONFunctions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -34,6 +35,7 @@ public class ApplicationContextLifecycleTests {
 		LifecycleTestBean bean2 = (LifecycleTestBean) context.getBean("bean2");
 		LifecycleTestBean bean3 = (LifecycleTestBean) context.getBean("bean3");
 		LifecycleTestBean bean4 = (LifecycleTestBean) context.getBean("bean4");
+		System.out.println("bean1："+bean1);
 		String error = "bean was not started";
 		assertThat(bean1.isRunning()).as(error).isTrue();
 		assertThat(bean2.isRunning()).as(error).isTrue();

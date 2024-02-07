@@ -197,8 +197,13 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 		Assert.notNull(clazz, "Class argument must not be null");
 		this.configResources = new Resource[paths.length];
 		for (int i = 0; i < paths.length; i++) {
+			//设置配置文件路径
 			this.configResources[i] = new ClassPathResource(paths[i], clazz);
 		}
+		/**
+		 * 刷新环境
+		 * 重点，必看
+		 */
 		refresh();
 	}
 
